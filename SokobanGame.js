@@ -2,6 +2,10 @@
 var gameGrid = document.getElementById("gameGrid");
 var playerId = 0;
 var boxes = [];
+var moves = 0;
+var seconds = 0;
+var minutes = 0;
+var timer;
 startGame();
 
 function startGame() {
@@ -35,6 +39,9 @@ function startGame() {
             gameGrid.appendChild(element);
         }
     }
+    document.getElementById("movesText").innerHTML = "Moves: " + moves;
+    document.getElementById("timeText").innerHTML = "Time: " + minutes + " : " + seconds;
+    timer = setInterval(updateTime, 1000);
 }
 
 
@@ -63,6 +70,10 @@ function movePlayer(event) {
                 while (boxes.length > 0) {
                     boxes.pop();
                 }
+                moves = 0;
+                seconds = 0;
+                minutes = 0;
+                clearInterval(timer);
                 startGame();
                 break;
         }
@@ -85,6 +96,10 @@ function checkCollision(x, xChange, y, yChange) {
         const newPlayerPos = document.getElementById(playerId);
         newPlayerPos.classList.add(Entities.Character);
         console.log(newPlayerPos);
+
+        moves++;
+        document.getElementById("movesText").innerHTML = "Moves: " + moves;
+        checkWinCondition();
     }
 }
 
@@ -134,7 +149,7 @@ function checkGoalBoxes(oldBoxPos, boxId, oldX, oldY, nextX, nextY) {
         newBoxPos.classList.add(Entities.BlockDone);
         console.log(newBoxPos);
 
-        checkWinCondition();
+        
         return true;
     }
     return false;
@@ -150,9 +165,21 @@ function checkWinCondition() {
         }
     }
     if (gameWon === true) {
+        clearInterval(timer);
         const h1Element = document.createElement("h1");
         h1Element.id = "winTitle";
         h1Element.innerHTML = "Congratulations!";
         gameGrid.appendChild(h1Element);
     }
+}
+
+function updateTime(){
+    seconds++;
+    
+    while(seconds >= 60){
+        minutes++;
+        seconds -= 60;
+    }
+
+    document.getElementById("timeText").innerHTML = "Time: " + minutes + " : " + seconds;
 }

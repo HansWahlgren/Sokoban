@@ -14,29 +14,44 @@ body {
     position: fixed;
     text-align: center;
     top: 15%;
-    left: 52%;
-    
+    right: 24%;
 }
 
-#gameText{
+#restartText{
     font-size: 30px;
     position: fixed;
     text-align: center;
     top: 25%;
-    left: 55%;
+    right: 28%;
 }
 
+#movesText{
+    font-size: 30px;
+    position: fixed;
+    text-align: center;
+    bottom: 4%;
+    left: 60%;
+}
+
+#timeText{
+    font-size: 30px;
+    position: fixed;
+    text-align: center;
+    bottom: 4%;
+    left: 25%;
+}
+*/
 img{
     width: 45px;
     height: 45px;
     display: block;
 }
 
-
 .divBox{
     width: 45px;
     height: 45px;
     float: left;
+    
     /*
     width: 5%;
     height: 5%;
