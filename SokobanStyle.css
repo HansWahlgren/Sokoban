@@ -1,0 +1,75 @@
+body {
+    overflow: hidden;
+    background-color: dimgray;
+  }
+
+#gameGrid{
+    width: 855px;
+    height: 720px;
+    margin: 0px auto;
+}
+
+#winTitle{
+    font-size: 50px;
+    position: fixed;
+    text-align: center;
+    top: 15%;
+    left: 52%;
+    
+}
+
+#gameText{
+    font-size: 30px;
+    position: fixed;
+    text-align: center;
+    top: 25%;
+    left: 55%;
+}
+
+img{
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+
+
+.divBox{
+    width: 45px;
+    height: 45px;
+    float: left;
+    /*
+    width: 5%;
+    height: 5%;
+    */
+}
+
+.tile-wall{
+    background-color: rgb(104, 33, 122);
+   
+}
+
+.tile-space{
+    background-color: dimgray;
+}
+
+.tile-goal{
+    background-color: chartreuse;
+    background-image: url("boxes/goal.png");
+
+}
+
+.entity-player{
+    background-color: darkblue;
+    background-image: url("boxes/player.png");
+}
+
+.entity-block{
+    background-color: saddlebrown;
+    background-image: url("boxes/box.jpg");
+
+}
+
+.entity-block-goal{
+    background-color: gold;
+    background-image: url("boxes/boxgoal.png");
+}
