@@ -21,8 +21,8 @@ body {
     font-size: 30px;
     position: fixed;
     text-align: center;
-    top: 25%;
-    right: 28%;
+    top: 5%;
+    left: 20%;
 }
 
 #movesText{

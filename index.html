@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="SokobanStyle.css" />
     <title>Sokoban</title>
 </head>
-<body onkeyup="movePlayer(event)">
-    <p id="restartText">Press enter to restart</p>
+<body onkeydown="movePlayer(event)">
+    <p id="restartText">Press enter to restart or spacebar to backtrack</p>
     <p id="movesText"></p>
     <p id="timeText"></p>
     <div id="gameGrid">
