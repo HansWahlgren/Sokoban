@@ -71,16 +71,19 @@ function movePlayer(event) {
                 stepBack();
                 break;
             case 13:
-                /*
+                
                 gameGrid.innerHTML = "";
-                while (boxes.length > 0) {
-                    boxes.pop();
-                }
-                */
-                boxes.length = [];
-                boxes.length = [];
-                playerMoves.length = [];
-                boxMoves.length = [];
+/*
+                Array.Clear(boxes);
+                boxes.Clear();
+                playerMoves.Clear();
+                boxMoves.Clear();
+*/
+
+                boxes = [];
+                playerMoves = [];
+                boxMoves = [];
+
                 moves = 0;
                 seconds = 0;
                 minutes = 0;
